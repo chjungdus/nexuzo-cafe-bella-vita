@@ -19,6 +19,7 @@
       <a href="#speisekarte">Speisekarte</a>
       <a href="#ueber-uns">Über uns</a>
       <a href="#galerie">Galerie</a>
+      <a href="#faq">FAQ</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
     <a href="#kontakt" class="btn btn-primary nav-cta">Anfahrt</a>
@@ -47,6 +48,10 @@
     <div class="hero-media">
       <!-- BILD ERSETZEN: Foto der Gebäck-/Kaffeetheke mit Cornetti und Cannoli (Empfehlung: 1200x1400px, Hochformat) -->
       <img src="images/hero.jpg" alt="Gebäck- und Kaffeetheke bei Cafe Bella Vita" onerror="this.parentElement.classList.add('img-fallback')">
+      <div class="hero-badge">
+        <span class="badge-score">5,0</span>
+        <span class="badge-label">Google</span>
+      </div>
     </div>
   </section>
 
@@ -67,36 +72,124 @@
     </div>
   </section>
 
+  <div class="diagonal-divider" aria-hidden="true"></div>
+
   <section class="section" id="speisekarte">
     <div class="section-head animate">
       <p class="eyebrow">Speisekarte</p>
       <h2>Unsere Klassiker</h2>
       <p class="section-lede">Eine kleine Auswahl — die vollständige Karte gibt es direkt im Café an der Friedrichstraße.</p>
     </div>
-    <div class="menu-grid animate">
-      <div class="menu-item">
-        <div class="menu-item-head"><span>Espresso</span><span class="menu-price">2,20 €</span></div>
-        <p>Klassisch italienisch, kräftig und samtig</p>
+
+    <div class="menu-category animate">
+      <h3 class="menu-category-title">Kaffee &amp; Espresso</h3>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-head"><span>Espresso</span><span class="menu-price">2,20 €</span></div>
+          <p>Klassisch italienisch, kräftig und samtig</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-head"><span>Cappuccino</span><span class="menu-price">3,20 €</span></div>
+          <p>Feinporiger Milchschaum, wie in Rom</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-head"><span>Caffè Latte</span><span class="menu-price">3,50 €</span></div>
+          <p>Mild und cremig, mit viel warmer Milch</p>
+        </div>
       </div>
-      <div class="menu-item">
-        <div class="menu-item-head"><span>Cappuccino</span><span class="menu-price">3,20 €</span></div>
-        <p>Feinporiger Milchschaum, wie in Rom</p>
+    </div>
+
+    <div class="menu-category animate">
+      <h3 class="menu-category-title">Gebäck</h3>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-head"><span>Cornetto</span><span class="menu-price">2,50 €</span></div>
+          <p>Täglich frisch gebacken, mit Crema oder pur</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-head"><span>Cannoli Siciliani</span><span class="menu-price">3,80 €</span></div>
+          <p>Knusprige Röllchen mit Ricotta-Creme</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-head"><span>Sfogliatella</span><span class="menu-price">3,20 €</span></div>
+          <p>Blätterteiggebäck mit Zitrus-Ricotta-Füllung</p>
+        </div>
       </div>
-      <div class="menu-item">
-        <div class="menu-item-head"><span>Cornetto</span><span class="menu-price">2,50 €</span></div>
-        <p>Täglich frisch gebacken, mit Crema oder pur</p>
+    </div>
+
+    <div class="menu-category animate">
+      <h3 class="menu-category-title">Panini &amp; Herzhaftes</h3>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-head"><span>Panino Prosciutto</span><span class="menu-price">6,50 €</span></div>
+          <p>Mit Parmaschinken, Rucola und Grana Padano</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-head"><span>Panino Caprese</span><span class="menu-price">5,90 €</span></div>
+          <p>Mozzarella, Tomate, Basilikum</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-head"><span>Focaccia del Giorno</span><span class="menu-price">4,80 €</span></div>
+          <p>Wechselnder Belag, fragt gerne beim Besuch</p>
+        </div>
       </div>
-      <div class="menu-item">
-        <div class="menu-item-head"><span>Cannoli Siciliani</span><span class="menu-price">3,80 €</span></div>
-        <p>Knusprige Röllchen mit Ricotta-Creme</p>
+    </div>
+
+    <div class="menu-category animate">
+      <h3 class="menu-category-title">Dolci</h3>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-head"><span>Tiramisù</span><span class="menu-price">4,50 €</span></div>
+          <p>Hausgemacht, nach original Familienrezept</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-head"><span>Panna Cotta</span><span class="menu-price">4,00 €</span></div>
+          <p>Mit Beerensauce oder Karamell</p>
+        </div>
       </div>
-      <div class="menu-item">
-        <div class="menu-item-head"><span>Panino Prosciutto</span><span class="menu-price">6,50 €</span></div>
-        <p>Mit Parmaschinken, Rucola und Grana Padano</p>
+    </div>
+  </section>
+
+  <section class="section chips-section">
+    <div class="section-head animate">
+      <p class="eyebrow">Beliebte Klassiker</p>
+      <h2>Das bestellen unsere Gäste am liebsten</h2>
+    </div>
+    <div class="chip-row animate">
+      <div class="chip">
+        <div class="chip-photo">
+          <!-- BILD ERSETZEN: Espresso, rund zugeschnitten -->
+          <img src="images/gallery-2.jpg" alt="Espresso bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        </div>
+        <p>Espresso</p>
       </div>
-      <div class="menu-item">
-        <div class="menu-item-head"><span>Tiramisù</span><span class="menu-price">4,50 €</span></div>
-        <p>Hausgemacht, nach original Familienrezept</p>
+      <div class="chip">
+        <div class="chip-photo">
+          <!-- BILD ERSETZEN: Cappuccino, rund zugeschnitten -->
+          <img src="images/gallery-3.jpg" alt="Cappuccino bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        </div>
+        <p>Cappuccino</p>
+      </div>
+      <div class="chip">
+        <div class="chip-photo">
+          <!-- BILD ERSETZEN: Cornetto, rund zugeschnitten -->
+          <img src="images/gallery-1.jpg" alt="Cornetto bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        </div>
+        <p>Cornetto</p>
+      </div>
+      <div class="chip">
+        <div class="chip-photo">
+          <!-- BILD ERSETZEN: Cannoli, rund zugeschnitten -->
+          <img src="images/gallery-2.jpg" alt="Cannoli bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        </div>
+        <p>Cannoli</p>
+      </div>
+      <div class="chip">
+        <div class="chip-photo">
+          <!-- BILD ERSETZEN: Panino, rund zugeschnitten -->
+          <img src="images/gallery-3.jpg" alt="Panino bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        </div>
+        <p>Panino</p>
       </div>
     </div>
   </section>
@@ -110,8 +203,46 @@
       <p class="eyebrow">Über uns</p>
       <h2>Familiär, italienisch, ehrlich</h2>
       <p>An der Friedrichstraße bringen wir ein Stück unserer italienischen Heimat nach Düsseldorf: Espresso, wie er sein soll, Gebäck, das nach mehr schmeckt, und ein Service, der sich Zeit für die Gäste nimmt.</p>
+      <p>Bei uns wird noch von Hand gearbeitet: Cornetti und Sfogliatelle kommen frisch aus dem Ofen, der Espresso wird für jede Tasse einzeln gezogen, und die Rezepte für Tiramisù und Panna Cotta stammen aus der Familie.</p>
       <p>Was uns besonders freut: Fast jede Rückmeldung, die wir bekommen, beantwortet der Chef persönlich — weil ihm wichtig ist, wie sich Gäste bei uns fühlen, nicht nur, was sie bestellen.</p>
       <a href="#galerie" class="link-arrow">Einblicke ins Café →</a>
+    </div>
+  </section>
+
+  <section class="section why-section">
+    <div class="section-head center animate">
+      <p class="eyebrow">Warum Bella Vita</p>
+      <h2>Was uns von anderen Cafés unterscheidet</h2>
+    </div>
+    <div class="why-grid animate">
+      <div class="why-item">
+        <span class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M12 16c0-6 4-10 8-10s8 4 8 10-4 14-8 14-8-8-8-14z" stroke="currentColor" stroke-width="1.4"/><circle cx="17" cy="15" r="1.6" fill="currentColor"/></svg>
+        </span>
+        <h3>Echte Röstung</h3>
+        <p>Kein Massenkaffee — unsere Bohnen sind sorgfältig ausgewählt und frisch gemahlen.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M20 32s-12-7-12-16a7 7 0 0 1 12-5 7 7 0 0 1 12 5c0 9-12 16-12 16z" stroke="currentColor" stroke-width="1.4"/></svg>
+        </span>
+        <h3>Mit Herz gemacht</h3>
+        <p>Gebäck und Dolci nach Familienrezepten, nicht aus der Großgebäck-Kiste.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M20 6c6 0 10 6 10 12 0 8-10 16-10 16S10 26 10 18c0-6 4-12 10-12z" stroke="currentColor" stroke-width="1.4"/><circle cx="20" cy="17" r="3.5" stroke="currentColor" stroke-width="1.4"/></svg>
+        </span>
+        <h3>Mitten in Friedrichstadt</h3>
+        <p>Gut erreichbar, mit Sitzplätzen zum Verweilen statt nur To-go.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.4"/><path d="M20 12v8l6 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </span>
+        <h3>Persönlicher Kontakt</h3>
+        <p>Der Chef kennt viele Gäste beim Namen — und antwortet auf jede Bewertung selbst.</p>
+      </div>
     </div>
   </section>
 
@@ -121,7 +252,7 @@
       <h2>Ein Blick ins Bella Vita</h2>
     </div>
     <div class="gallery-grid animate">
-      <div class="gallery-item">
+      <div class="gallery-item gallery-item-offset">
         <!-- BILD ERSETZEN: Café-Foto -->
         <img src="images/gallery-1.jpg" alt="Theke bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
       </div>
@@ -129,10 +260,39 @@
         <!-- BILD ERSETZEN: Café-Foto -->
         <img src="images/gallery-2.jpg" alt="Gebäckauswahl bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item gallery-item-offset">
         <!-- BILD ERSETZEN: Café-Foto -->
         <img src="images/gallery-3.jpg" alt="Kaffeespezialität bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
       </div>
+    </div>
+  </section>
+
+  <section class="section faq-section" id="faq">
+    <div class="section-head animate">
+      <p class="eyebrow">FAQ</p>
+      <h2>Häufige Fragen</h2>
+    </div>
+    <div class="faq-list animate">
+      <details class="faq-item">
+        <summary>Kann ich einen Tisch reservieren?</summary>
+        <p>Für kleinere Gruppen reicht meist spontanes Vorbeikommen. Bei größeren Runden ruf uns gerne vorher kurz an.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Bietet ihr Lieferung an?</summary>
+        <p>Ja, laut unserem Google-Profil bieten wir Lieferung sowie Speisen zum Mitnehmen an — am besten direkt telefonisch erfragen, was aktuell möglich ist.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Habt ihr auch sonntags geöffnet?</summary>
+        <p>Die Öffnungszeiten am Sonntag variieren — ein Blick auf den Aushang vor Ort oder ein kurzer Anruf hilft am zuverlässigsten weiter.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Welche Zahlungsmethoden werden akzeptiert?</summary>
+        <p>Bar und Kartenzahlung sind beide möglich.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Gibt es Informationen zu Allergenen?</summary>
+        <p>Sprich uns gerne direkt an — wir informieren dich gerne persönlich zu Zutaten und Allergenen in unseren Gebäckstücken.</p>
+      </details>
     </div>
   </section>
 
@@ -183,6 +343,7 @@
     <div class="footer-col">
       <p class="logo">Bella Vita</p>
       <p>Friedrichstraße 130<br>40217 Düsseldorf</p>
+      <p>Italienisches Café in Düsseldorf-Friedrichstadt.</p>
     </div>
     <div class="footer-col">
       <p class="footer-heading">Öffnungszeiten</p>
@@ -190,6 +351,13 @@
         <tr><td>Montag – Samstag</td><td>08:00 – 19:00</td></tr>
         <tr><td>Sonntag</td><td>siehe Aushang</td></tr>
       </table>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Navigation</p>
+      <p><a href="#speisekarte">Speisekarte</a></p>
+      <p><a href="#ueber-uns">Über uns</a></p>
+      <p><a href="#galerie">Galerie</a></p>
+      <p><a href="#faq">FAQ</a></p>
     </div>
     <div class="footer-col">
       <p class="footer-heading">Kontakt</p>
