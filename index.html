@@ -7,22 +7,38 @@
 <meta name="description" content="Cafe Bella Vita: italienisches Café an der Friedrichstraße in Düsseldorf. Espresso, Cornetti, Cannoli und Panini — familiär geführt, 5,0 Sterne bei Google.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- Scroll-to-top Button -->
+<button class="scroll-top" id="scrollTop" aria-label="Nach oben scrollen">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galerie-Ansicht">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Schließen">&times;</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Vorheriges Bild">&#8249;</button>
+  <button class="lightbox-next" id="lightboxNext" aria-label="Nächstes Bild">&#8250;</button>
+  <div class="lightbox-img-wrap">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+</div>
 
 <header class="site-header" id="top">
   <div class="header-inner">
     <a href="#top" class="logo">Bella Vita</a>
     <nav class="main-nav" id="mainNav">
       <a href="#speisekarte">Speisekarte</a>
+      <a href="#kaffeereise">Kaffee</a>
       <a href="#ueber-uns">Über uns</a>
       <a href="#galerie">Galerie</a>
-      <a href="#faq">FAQ</a>
+      <a href="#reservierung">Reservierung</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <a href="#kontakt" class="btn btn-primary nav-cta">Anfahrt</a>
+    <a href="#reservierung" class="btn btn-primary nav-cta">Tisch reservieren</a>
     <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -31,26 +47,74 @@
 
 <main>
 
-  <section class="hero">
-    <div class="hero-text">
-      <p class="eyebrow">Friedrichstraße, Düsseldorf</p>
-      <h1>Ein Stück Italien<br>mitten in Düsseldorf</h1>
-      <p class="hero-lede">Espresso wie in Neapel, Cornetti frisch aus dem Ofen und Cannoli, für die es sich lohnt vorbeizukommen — familiär geführt, mit echter italienischer Herzlichkeit.</p>
-      <div class="hero-actions">
-        <a href="#speisekarte" class="btn btn-primary">Speisekarte ansehen</a>
-        <a href="tel:+4921115875984" class="btn btn-outline">+49 211 15875984</a>
+  <!-- HERO SLIDER -->
+  <section class="hero-slider" aria-label="Bildergalerie">
+    <div class="slider-track" id="sliderTrack">
+      <div class="slide active">
+        <div class="slide-bg">
+          <!-- BILD ERSETZEN: Kaffeetheke mit Espresso-Maschine (1920x900px, Querformat) -->
+          <img src="images/hero.jpg" alt="Espresso-Theke bei Cafe Bella Vita" onerror="this.parentElement.classList.add('img-fallback')">
+        </div>
+        <div class="slide-content">
+          <p class="eyebrow eyebrow-invert">Friedrichstraße, Düsseldorf</p>
+          <h1>Ein Stück Italien<br>mitten in Düsseldorf</h1>
+          <p class="slide-lede">Espresso wie in Neapel, Cornetti frisch aus dem Ofen — familiär geführt, mit echter italienischer Herzlichkeit.</p>
+          <div class="hero-actions">
+            <a href="#speisekarte" class="btn btn-primary">Speisekarte ansehen</a>
+            <a href="#reservierung" class="btn btn-outline-light">Tisch reservieren</a>
+          </div>
+        </div>
       </div>
-      <div class="hero-rating">
-        <span class="stars">★★★★★</span>
-        <span>5,0 · Friedrichstraße 130, 40217 Düsseldorf</span>
+      <div class="slide">
+        <div class="slide-bg">
+          <!-- BILD ERSETZEN: Cannoli und Gebäck auf der Theke (1920x900px) -->
+          <img src="images/gallery-1.jpg" alt="Cannoli und Gebäck bei Cafe Bella Vita" onerror="this.parentElement.classList.add('img-fallback')">
+        </div>
+        <div class="slide-content">
+          <p class="eyebrow eyebrow-invert">Täglich frisch gebacken</p>
+          <h1>Gebäck nach<br>Familienrezept</h1>
+          <p class="slide-lede">Cornetti, Cannoli Siciliani und Sfogliatelle — nach Rezepten, die seit Generationen weitergegeben werden.</p>
+          <div class="hero-actions">
+            <a href="#speisekarte" class="btn btn-primary">Zur Speisekarte</a>
+          </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-bg">
+          <!-- BILD ERSETZEN: Café-Innenraum, gemütliche Atmosphäre (1920x900px) -->
+          <img src="images/gallery-2.jpg" alt="Innenraum Cafe Bella Vita" onerror="this.parentElement.classList.add('img-fallback')">
+        </div>
+        <div class="slide-content">
+          <p class="eyebrow eyebrow-invert">5,0 Sterne bei Google</p>
+          <h1>Herzlichkeit<br>auf jedem Tisch</h1>
+          <p class="slide-lede">Ein Café, in dem man sich sofort wohlfühlt — ob zum schnellen Espresso oder zum langen Verweilen.</p>
+          <div class="hero-actions">
+            <a href="#ueber-uns" class="btn btn-primary">Mehr erfahren</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-media">
-      <!-- BILD ERSETZEN: Foto der Gebäck-/Kaffeetheke mit Cornetti und Cannoli (Empfehlung: 1200x1400px, Hochformat) -->
-      <img src="images/hero.jpg" alt="Gebäck- und Kaffeetheke bei Cafe Bella Vita" onerror="this.parentElement.classList.add('img-fallback')">
+
+    <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Vorheriges Bild">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="slider-btn slider-next" id="sliderNext" aria-label="Nächstes Bild">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="slider-dots" id="sliderDots">
+      <button class="dot active" data-index="0" aria-label="Bild 1"></button>
+      <button class="dot" data-index="1" aria-label="Bild 2"></button>
+      <button class="dot" data-index="2" aria-label="Bild 3"></button>
+    </div>
+
+    <div class="hero-badge-float">
       <div class="hero-badge">
         <span class="badge-score">5,0</span>
         <span class="badge-label">Google</span>
+      </div>
+      <div class="opening-status" id="openingStatus">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Wird geladen…</span>
       </div>
     </div>
   </section>
@@ -72,8 +136,7 @@
     </div>
   </section>
 
-  <div class="diagonal-divider" aria-hidden="true"></div>
-
+  <!-- SPEISEKARTE MIT TAB-SWITCHER -->
   <section class="section" id="speisekarte">
     <div class="section-head animate">
       <p class="eyebrow">Speisekarte</p>
@@ -81,144 +144,246 @@
       <p class="section-lede">Eine kleine Auswahl — die vollständige Karte gibt es direkt im Café an der Friedrichstraße.</p>
     </div>
 
-    <div class="menu-category animate">
-      <h3 class="menu-category-title">Kaffee &amp; Espresso</h3>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Espresso</span><span class="menu-price">2,20 €</span></div>
-          <p>Klassisch italienisch, kräftig und samtig</p>
+    <!-- Filter-Buttons -->
+    <div class="menu-filter animate" role="group" aria-label="Menü filtern">
+      <button class="filter-btn active" data-filter="alle">Alle</button>
+      <button class="filter-btn" data-filter="heiss">Heiß</button>
+      <button class="filter-btn" data-filter="kalt">Kalt</button>
+      <button class="filter-btn" data-filter="vegan">Vegan</button>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="menu-tabs animate" role="tablist">
+      <button class="menu-tab active" role="tab" data-tab="kaffee" aria-selected="true">Kaffee</button>
+      <button class="menu-tab" role="tab" data-tab="gebaeck" aria-selected="false">Gebäck</button>
+      <button class="menu-tab" role="tab" data-tab="panini" aria-selected="false">Panini</button>
+      <button class="menu-tab" role="tab" data-tab="dolci" aria-selected="false">Dolci</button>
+    </div>
+
+    <!-- Kaffee -->
+    <div class="menu-panel active" id="tab-kaffee" role="tabpanel">
+      <div class="menu-grid-cards">
+        <div class="menu-card" data-tags="heiss">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Espresso</span><span class="menu-price">2,20 €</span></div>
+            <p>Klassisch italienisch, kräftig und samtig</p>
+            <span class="menu-tag">Heiß</span>
+          </div>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Cappuccino</span><span class="menu-price">3,20 €</span></div>
-          <p>Feinporiger Milchschaum, wie in Rom</p>
+        <div class="menu-card" data-tags="heiss">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Cappuccino</span><span class="menu-price">3,20 €</span></div>
+            <p>Feinporiger Milchschaum, wie in Rom</p>
+            <span class="menu-tag">Heiß</span>
+          </div>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Caffè Latte</span><span class="menu-price">3,50 €</span></div>
-          <p>Mild und cremig, mit viel warmer Milch</p>
+        <div class="menu-card" data-tags="heiss">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Caffè Latte</span><span class="menu-price">3,50 €</span></div>
+            <p>Mild und cremig, mit viel warmer Milch</p>
+            <span class="menu-tag">Heiß</span>
+          </div>
+        </div>
+        <div class="menu-card" data-tags="kalt vegan">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Iced Latte</span><span class="menu-price">3,90 €</span></div>
+            <p>Espresso, kalte Milch und Eis, leicht gesüßt</p>
+            <div class="menu-tags-row"><span class="menu-tag">Kalt</span></div>
+          </div>
+        </div>
+        <div class="menu-card" data-tags="kalt vegan">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Limonata</span><span class="menu-price">3,50 €</span></div>
+            <p>Hausgemacht, mit frischer Zitrone</p>
+            <div class="menu-tags-row"><span class="menu-tag">Kalt</span><span class="menu-tag tag-vegan">Vegan</span></div>
+          </div>
+        </div>
+        <div class="menu-card" data-tags="kalt vegan">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Acqua Frizzante</span><span class="menu-price">2,80 €</span></div>
+            <p>Italienisches Mineralwasser, spritzig</p>
+            <div class="menu-tags-row"><span class="menu-tag">Kalt</span><span class="menu-tag tag-vegan">Vegan</span></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="menu-category animate">
-      <h3 class="menu-category-title">Gebäck</h3>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Cornetto</span><span class="menu-price">2,50 €</span></div>
-          <p>Täglich frisch gebacken, mit Crema oder pur</p>
+    <!-- Gebäck -->
+    <div class="menu-panel" id="tab-gebaeck" role="tabpanel" hidden>
+      <div class="menu-grid-cards">
+        <div class="menu-card" data-tags="heiss">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Cornetto</span><span class="menu-price">2,50 €</span></div>
+            <p>Täglich frisch gebacken, mit Crema oder pur</p>
+            <span class="menu-tag">Heiß</span>
+          </div>
         </div>
-        <div class="menu-item menu-item-featured">
-          <span class="ribbon-badge">Hausspezialität</span>
-          <div class="menu-item-head"><span>Cannoli Siciliani</span><span class="menu-price">3,80 €</span></div>
-          <p>Knusprige Röllchen mit Ricotta-Creme</p>
+        <div class="menu-card menu-card-featured" data-tags="heiss">
+          <div class="menu-card-inner">
+            <span class="ribbon-badge">Hausspezialität</span>
+            <div class="menu-card-head"><span class="menu-card-name">Cannoli Siciliani</span><span class="menu-price">3,80 €</span></div>
+            <p>Knusprige Röllchen mit Ricotta-Creme</p>
+            <span class="menu-tag">Heiß</span>
+          </div>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Sfogliatella</span><span class="menu-price">3,20 €</span></div>
-          <p>Blätterteiggebäck mit Zitrus-Ricotta-Füllung</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="menu-category animate">
-      <h3 class="menu-category-title">Panini &amp; Herzhaftes</h3>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Panino Prosciutto</span><span class="menu-price">6,50 €</span></div>
-          <p>Mit Parmaschinken, Rucola und Grana Padano</p>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Panino Caprese</span><span class="menu-price">5,90 €</span></div>
-          <p>Mozzarella, Tomate, Basilikum</p>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Focaccia del Giorno</span><span class="menu-price">4,80 €</span></div>
-          <p>Wechselnder Belag, fragt gerne beim Besuch</p>
+        <div class="menu-card" data-tags="heiss">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Sfogliatella</span><span class="menu-price">3,20 €</span></div>
+            <p>Blätterteiggebäck mit Zitrus-Ricotta-Füllung</p>
+            <span class="menu-tag">Heiß</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="menu-category animate">
-      <h3 class="menu-category-title">Dolci</h3>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Tiramisù</span><span class="menu-price">4,50 €</span></div>
-          <p>Hausgemacht, nach original Familienrezept</p>
+    <!-- Panini -->
+    <div class="menu-panel" id="tab-panini" role="tabpanel" hidden>
+      <div class="menu-grid-cards">
+        <div class="menu-card" data-tags="heiss">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Panino Prosciutto</span><span class="menu-price">6,50 €</span></div>
+            <p>Mit Parmaschinken, Rucola und Grana Padano</p>
+            <span class="menu-tag">Heiß</span>
+          </div>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Panna Cotta</span><span class="menu-price">4,00 €</span></div>
-          <p>Mit Beerensauce oder Karamell</p>
+        <div class="menu-card" data-tags="heiss vegan">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Panino Caprese</span><span class="menu-price">5,90 €</span></div>
+            <p>Mozzarella, Tomate, Basilikum</p>
+            <div class="menu-tags-row"><span class="menu-tag">Heiß</span><span class="menu-tag tag-vegan">Vegetarisch</span></div>
+          </div>
+        </div>
+        <div class="menu-card" data-tags="heiss">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Focaccia del Giorno</span><span class="menu-price">4,80 €</span></div>
+            <p>Wechselnder Belag, fragt gerne beim Besuch</p>
+            <span class="menu-tag">Heiß</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="menu-category animate">
-      <h3 class="menu-category-title">Kalte Getränke</h3>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Iced Latte</span><span class="menu-price">3,90 €</span></div>
-          <p>Espresso, kalte Milch und Eis, leicht gesüßt</p>
+    <!-- Dolci -->
+    <div class="menu-panel" id="tab-dolci" role="tabpanel" hidden>
+      <div class="menu-grid-cards">
+        <div class="menu-card" data-tags="heiss">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Tiramisù</span><span class="menu-price">4,50 €</span></div>
+            <p>Hausgemacht, nach original Familienrezept</p>
+            <span class="menu-tag">Heiß</span>
+          </div>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Limonata</span><span class="menu-price">3,50 €</span></div>
-          <p>Hausgemacht, mit frischer Zitrone</p>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-head"><span>Acqua Frizzante</span><span class="menu-price">2,80 €</span></div>
-          <p>Italienisches Mineralwasser, spritzig</p>
+        <div class="menu-card" data-tags="kalt">
+          <div class="menu-card-inner">
+            <div class="menu-card-head"><span class="menu-card-name">Panna Cotta</span><span class="menu-price">4,00 €</span></div>
+            <p>Mit Beerensauce oder Karamell</p>
+            <span class="menu-tag">Kalt</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section chips-section">
+  <!-- ZITAT-BAND -->
+  <section class="quote-band">
+    <div class="quote-band-inner animate">
+      <blockquote>
+        <p class="quote-text">Handgemacht. Täglich frisch. Mit Liebe serviert.</p>
+        <cite>— Cafe Bella Vita, Friedrichstraße 130</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- KAFFEEREISE — Herkunfts-Tabs -->
+  <section class="section" id="kaffeereise">
     <div class="section-head animate">
-      <p class="eyebrow">Beliebte Klassiker</p>
-      <h2>Das bestellen unsere Gäste am liebsten</h2>
+      <p class="eyebrow">Unsere Kaffeereise</p>
+      <h2>Wo unser Kaffee herkommt</h2>
+      <p class="section-lede">Hinter jeder Tasse steckt eine Geschichte. Drei Herkunftsländer, drei Charaktere — alle vereint in der Tasse.</p>
     </div>
-    <div class="chip-row animate">
-      <div class="chip">
-        <div class="chip-photo">
-          <!-- BILD ERSETZEN: Espresso, rund zugeschnitten -->
-          <img src="images/gallery-2.jpg" alt="Espresso bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
-        </div>
-        <p>Espresso</p>
+
+    <div class="origin-tabs animate">
+      <div class="origin-tab-nav" role="tablist">
+        <button class="origin-tab active" role="tab" data-origin="aethiopien" aria-selected="true">Äthiopien</button>
+        <button class="origin-tab" role="tab" data-origin="kolumbien" aria-selected="false">Kolumbien</button>
+        <button class="origin-tab" role="tab" data-origin="brasilien" aria-selected="false">Brasilien</button>
       </div>
-      <div class="chip">
-        <div class="chip-photo">
-          <!-- BILD ERSETZEN: Cappuccino, rund zugeschnitten -->
-          <img src="images/gallery-3.jpg" alt="Cappuccino bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+
+      <div class="origin-panel active" id="origin-aethiopien">
+        <div class="origin-split">
+          <div class="origin-img">
+            <!-- BILD ERSETZEN: Äthiopische Kaffeeplantage oder Kaffeekirschen (800x600px) -->
+            <img src="images/gallery-1.jpg" alt="Kaffeeplantage Äthiopien" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          </div>
+          <div class="origin-text">
+            <h3>Äthiopien — die Wiege des Kaffees</h3>
+            <p>Äthiopien gilt als das Ursprungsland des Kaffees. In den Hochlagen der Region Kaffa wachsen noch heute Wildkaffeepflanzen, die seit Jahrhunderten geerntet werden. Die Bohnen entwickeln blumige, fruchtige Noten mit einer lebendigen Säure — unverkennbar und einzigartig.</p>
+            <p>In unserer Mischung bringt der äthiopische Anteil Lebendigkeit und Aroma — die Basis für einen Espresso mit Charakter.</p>
+            <div class="origin-notes">
+              <span class="note-chip">Blumig</span>
+              <span class="note-chip">Beerig</span>
+              <span class="note-chip">Lebhafte Säure</span>
+            </div>
+          </div>
         </div>
-        <p>Cappuccino</p>
       </div>
-      <div class="chip">
-        <div class="chip-photo">
-          <!-- BILD ERSETZEN: Cornetto, rund zugeschnitten -->
-          <img src="images/gallery-1.jpg" alt="Cornetto bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+
+      <div class="origin-panel" id="origin-kolumbien" hidden>
+        <div class="origin-split">
+          <div class="origin-img">
+            <!-- BILD ERSETZEN: Kolumbianische Kaffeeplantage mit Bergen (800x600px) -->
+            <img src="images/gallery-2.jpg" alt="Kaffeeplantage Kolumbien" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          </div>
+          <div class="origin-text">
+            <h3>Kolumbien — ausgewogen und klar</h3>
+            <p>Die kolumbianischen Anden bieten ideale Anbaubedingungen: kühle Nächte, warme Tage, vulkanreicher Boden. Das Ergebnis sind Bohnen mit einer sauberen, ausgewogenen Struktur — weder zu kräftig noch zu mild.</p>
+            <p>Unser kolumbianischer Anteil bringt Klarheit in die Tasse: ein Cappuccino, der nach mehr schmeckt.</p>
+            <div class="origin-notes">
+              <span class="note-chip">Karamell</span>
+              <span class="note-chip">Nuss</span>
+              <span class="note-chip">Ausgewogen</span>
+            </div>
+          </div>
         </div>
-        <p>Cornetto</p>
       </div>
-      <div class="chip">
-        <div class="chip-photo">
-          <!-- BILD ERSETZEN: Cannoli, rund zugeschnitten -->
-          <img src="images/gallery-2.jpg" alt="Cannoli bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+
+      <div class="origin-panel" id="origin-brasilien" hidden>
+        <div class="origin-split">
+          <div class="origin-img">
+            <!-- BILD ERSETZEN: Brasilianische Kaffeeplantage (800x600px) -->
+            <img src="images/gallery-3.jpg" alt="Kaffeeplantage Brasilien" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          </div>
+          <div class="origin-text">
+            <h3>Brasilien — vollmundig und rund</h3>
+            <p>Brasilien ist der größte Kaffeeproduzent der Welt — und das aus gutem Grund. Die sonnengereiften Bohnen aus dem Cerrado oder São Paulo entwickeln eine natürliche Süße, eine volle Textur und einen langen Abgang.</p>
+            <p>Im Espresso sorgt Brasilien für Körper und Cremigkeit — das Fundament unserer Hausmischung.</p>
+            <div class="origin-notes">
+              <span class="note-chip">Schokolade</span>
+              <span class="note-chip">Vollmundig</span>
+              <span class="note-chip">Süß</span>
+            </div>
+          </div>
         </div>
-        <p>Cannoli</p>
-      </div>
-      <div class="chip">
-        <div class="chip-photo">
-          <!-- BILD ERSETZEN: Panino, rund zugeschnitten -->
-          <img src="images/gallery-3.jpg" alt="Panino bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
-        </div>
-        <p>Panino</p>
       </div>
     </div>
   </section>
 
-  <div class="scallop-divider" aria-hidden="true"></div>
+  <!-- PARALLAX-ZWISCHENRAUM -->
+  <section class="parallax-band">
+    <div class="parallax-content animate">
+      <p class="parallax-headline">Handgemacht.<br>Täglich frisch.</p>
+      <p class="parallax-sub">Jeden Morgen neu — weil Qualität keine Kompromisse kennt.</p>
+    </div>
+  </section>
 
+  <!-- ÜBER UNS — Bild links, Text rechts (reverse) -->
   <section class="section split reverse" id="ueber-uns">
     <div class="split-media animate-right">
       <!-- BILD ERSETZEN: Foto vom Café-Innenraum oder Inhaber (Empfehlung: 1200x900px) -->
       <img src="images/gallery-1.jpg" alt="Innenraum von Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+      <div class="split-media-overlap">
+        <span class="overlap-badge">Seit 2018<br>in Düsseldorf</span>
+      </div>
     </div>
     <div class="split-text animate-left">
       <p class="eyebrow">Über uns</p>
@@ -230,76 +395,243 @@
     </div>
   </section>
 
-  <section class="section sourcing-section">
-    <div class="sourcing-inner animate-scale">
-      <span class="sourcing-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" fill="none"><path d="M13 24c0-7 5-13 12-14-2 6-1 12 2 16-3 3-8 4-12 2-2-1-2-3-2-4z" stroke="currentColor" stroke-width="1.4"/></svg>
-      </span>
-      <p class="eyebrow">Kaffee &amp; Zutaten</p>
-      <h2>Was in die Tasse kommt</h2>
-      <p>Guter Kaffee beginnt lange vor der Tasse. Wir setzen auf sorgfältig ausgewählte Röstungen nach italienischer Tradition und mahlen frisch für jede Zubereitung — für ein Aroma, das man schmeckt.</p>
-      <p>Auch beim Gebäck und den Zutaten für unsere Panini zählt für uns Qualität statt Massenware. Was sich frisch zubereiten lässt, kommt bei uns frisch auf den Tisch — Tag für Tag.</p>
+  <!-- WARUM BELLA VITA — Asymmetrisch 2:1 -->
+  <section class="section asymmetric-section">
+    <div class="asymmetric-inner">
+      <div class="asymmetric-main animate-left">
+        <p class="eyebrow">Warum Bella Vita</p>
+        <h2>Was uns von anderen Cafés unterscheidet</h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <span class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><path d="M12 16c0-6 4-10 8-10s8 4 8 10-4 14-8 14-8-8-8-14z" stroke="currentColor" stroke-width="1.4"/><circle cx="17" cy="15" r="1.6" fill="currentColor"/></svg>
+            </span>
+            <h3>Echte Röstung</h3>
+            <p>Kein Massenkaffee — unsere Bohnen sind sorgfältig ausgewählt und frisch gemahlen.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><path d="M20 32s-12-7-12-16a7 7 0 0 1 12-5 7 7 0 0 1 12 5c0 9-12 16-12 16z" stroke="currentColor" stroke-width="1.4"/></svg>
+            </span>
+            <h3>Mit Herz gemacht</h3>
+            <p>Gebäck und Dolci nach Familienrezepten, nicht aus der Großgebäck-Kiste.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><path d="M20 6c6 0 10 6 10 12 0 8-10 16-10 16S10 26 10 18c0-6 4-12 10-12z" stroke="currentColor" stroke-width="1.4"/><circle cx="20" cy="17" r="3.5" stroke="currentColor" stroke-width="1.4"/></svg>
+            </span>
+            <h3>Mitten in Friedrichstadt</h3>
+            <p>Gut erreichbar, mit Sitzplätzen zum Verweilen statt nur To-go.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.4"/><path d="M20 12v8l6 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Persönlicher Kontakt</h3>
+            <p>Der Chef kennt viele Gäste beim Namen — und antwortet auf jede Bewertung selbst.</p>
+          </div>
+        </div>
+      </div>
+      <div class="asymmetric-side animate-right">
+        <!-- BILD ERSETZEN: Nahaufnahme Kaffee mit Latte-Art (600x800px, Hochformat) -->
+        <img src="images/gallery-3.jpg" alt="Latte Art bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+      </div>
     </div>
   </section>
 
-  <section class="section why-section">
+  <!-- TEAM-SEKTION -->
+  <section class="section team-section">
     <div class="section-head center animate">
-      <p class="eyebrow">Warum Bella Vita</p>
-      <h2>Was uns von anderen Cafés unterscheidet</h2>
+      <p class="eyebrow">Unser Team</p>
+      <h2>Die Menschen hinter dem Kaffee</h2>
+      <p class="section-lede">Jede Tasse trägt eine Handschrift — die unserer Baristi, die täglich mit Leidenschaft für euch da sind.</p>
     </div>
-    <div class="why-grid animate">
-      <div class="why-item">
-        <span class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 40 40" fill="none"><path d="M12 16c0-6 4-10 8-10s8 4 8 10-4 14-8 14-8-8-8-14z" stroke="currentColor" stroke-width="1.4"/><circle cx="17" cy="15" r="1.6" fill="currentColor"/></svg>
-        </span>
-        <h3>Echte Röstung</h3>
-        <p>Kein Massenkaffee — unsere Bohnen sind sorgfältig ausgewählt und frisch gemahlen.</p>
+    <div class="team-grid animate">
+      <div class="team-card">
+        <div class="team-img">
+          <!-- BILD ERSETZEN: Foto Barista 1 (400x500px, Hochformat) -->
+          <img src="images/gallery-1.jpg" alt="Inhaber Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          <div class="team-overlay">
+            <span class="team-name">Marco</span>
+            <span class="team-role">Inhaber &amp; Barista</span>
+          </div>
+        </div>
       </div>
-      <div class="why-item">
-        <span class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 40 40" fill="none"><path d="M20 32s-12-7-12-16a7 7 0 0 1 12-5 7 7 0 0 1 12 5c0 9-12 16-12 16z" stroke="currentColor" stroke-width="1.4"/></svg>
-        </span>
-        <h3>Mit Herz gemacht</h3>
-        <p>Gebäck und Dolci nach Familienrezepten, nicht aus der Großgebäck-Kiste.</p>
+      <div class="team-card">
+        <div class="team-img">
+          <!-- BILD ERSETZEN: Foto Barista 2 (400x500px, Hochformat) -->
+          <img src="images/gallery-2.jpg" alt="Barista Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          <div class="team-overlay">
+            <span class="team-name">Sofia</span>
+            <span class="team-role">Barista &amp; Gebäck</span>
+          </div>
+        </div>
       </div>
-      <div class="why-item">
-        <span class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 40 40" fill="none"><path d="M20 6c6 0 10 6 10 12 0 8-10 16-10 16S10 26 10 18c0-6 4-12 10-12z" stroke="currentColor" stroke-width="1.4"/><circle cx="20" cy="17" r="3.5" stroke="currentColor" stroke-width="1.4"/></svg>
-        </span>
-        <h3>Mitten in Friedrichstadt</h3>
-        <p>Gut erreichbar, mit Sitzplätzen zum Verweilen statt nur To-go.</p>
-      </div>
-      <div class="why-item">
-        <span class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.4"/><path d="M20 12v8l6 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-        </span>
-        <h3>Persönlicher Kontakt</h3>
-        <p>Der Chef kennt viele Gäste beim Namen — und antwortet auf jede Bewertung selbst.</p>
+      <div class="team-card">
+        <div class="team-img">
+          <!-- BILD ERSETZEN: Foto Barista 3 (400x500px, Hochformat) -->
+          <img src="images/gallery-3.jpg" alt="Service Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          <div class="team-overlay">
+            <span class="team-name">Luca</span>
+            <span class="team-role">Service &amp; Küche</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- GALERIE MIT LIGHTBOX -->
   <section class="section" id="galerie">
     <div class="section-head animate">
       <p class="eyebrow">Galerie</p>
       <h2>Ein Blick ins Bella Vita</h2>
     </div>
     <div class="gallery-grid animate">
-      <div class="gallery-item gallery-item-offset">
-        <!-- BILD ERSETZEN: Café-Foto -->
+      <div class="gallery-item gallery-item-offset" data-lightbox="0">
+        <!-- BILD ERSETZEN: Café-Foto 1 -->
         <img src="images/gallery-1.jpg" alt="Theke bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
       </div>
-      <div class="gallery-item">
-        <!-- BILD ERSETZEN: Café-Foto -->
+      <div class="gallery-item" data-lightbox="1">
+        <!-- BILD ERSETZEN: Café-Foto 2 -->
         <img src="images/gallery-2.jpg" alt="Gebäckauswahl bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
       </div>
-      <div class="gallery-item gallery-item-offset">
-        <!-- BILD ERSETZEN: Café-Foto -->
+      <div class="gallery-item gallery-item-offset" data-lightbox="2">
+        <!-- BILD ERSETZEN: Café-Foto 3 -->
         <img src="images/gallery-3.jpg" alt="Kaffeespezialität bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item" data-lightbox="3">
+        <!-- BILD ERSETZEN: Café-Foto 4 -->
+        <img src="images/gallery-1.jpg" alt="Atmosphäre bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item gallery-item-offset" data-lightbox="4">
+        <!-- BILD ERSETZEN: Café-Foto 5 -->
+        <img src="images/gallery-2.jpg" alt="Kaffee bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item" data-lightbox="5">
+        <!-- BILD ERSETZEN: Café-Foto 6 -->
+        <img src="images/gallery-3.jpg" alt="Süßes bei Cafe Bella Vita" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        <div class="gallery-overlay">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- BEWERTUNGEN — gestaffelt -->
+  <section class="section reviews" id="bewertungen">
+    <div class="section-head center animate">
+      <p class="eyebrow">Bewertungen</p>
+      <h2>5,0 ★ bei Google</h2>
+    </div>
+    <div class="review-stagger animate">
+      <blockquote class="review-card review-card-high">
+        <div class="review-stars">★★★★★</div>
+        <p>„Sehr leckere italienische Spezialitäten und eine tolle Auswahl an frischen Cannoli, Cornetti und Kaffee. Cafe Bella Vita ist eine klare Empfehlung in Düsseldorf – freundlicher Service, authentischer Geschmack und eine gemütliche Atmosphäre."</p>
+        <cite>— Noah Sabatino, Google-Rezension</cite>
+      </blockquote>
+      <blockquote class="review-card review-card-low">
+        <div class="review-stars">★★★★★</div>
+        <p>„Alles Mega lecker und Personal sehr freundlich."</p>
+        <cite>— Nicole Ventura, Google-Rezension</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- RESERVIERUNG -->
+  <section class="section reservation-section" id="reservierung">
+    <div class="reservation-inner">
+      <div class="reservation-text animate-left">
+        <p class="eyebrow">Reservierung</p>
+        <h2>Einen Tisch reservieren</h2>
+        <p>Für kleine Gruppen reicht oft spontanes Vorbeikommen. Für größere Runden oder besondere Anlässe reserviert gerne vorab — wir freuen uns auf euch.</p>
+        <div class="reservation-info">
+          <div class="res-info-item">
+            <strong>Telefon</strong>
+            <a href="tel:+4921115875984">+49 211 15875984</a>
+          </div>
+          <div class="res-info-item">
+            <strong>Adresse</strong>
+            <span>Friedrichstraße 130, 40217 Düsseldorf</span>
+          </div>
+          <div class="res-info-item">
+            <strong>Öffnungszeiten</strong>
+            <span>Mo – Sa: 08:00 – 19:00 Uhr</span>
+          </div>
+        </div>
+      </div>
+      <div class="reservation-form-wrap animate-right">
+        <form class="reservation-form" id="reservationForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-name">Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="res-name" name="name" placeholder="Ihr Name" autocomplete="name" required>
+              <span class="form-error" id="err-name"></span>
+            </div>
+            <div class="form-group">
+              <label for="res-email">E-Mail <span aria-hidden="true">*</span></label>
+              <input type="email" id="res-email" name="email" placeholder="ihre@email.de" autocomplete="email" required>
+              <span class="form-error" id="err-email"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-date">Datum <span aria-hidden="true">*</span></label>
+              <input type="date" id="res-date" name="date" required>
+              <span class="form-error" id="err-date"></span>
+            </div>
+            <div class="form-group">
+              <label for="res-time">Uhrzeit <span aria-hidden="true">*</span></label>
+              <input type="time" id="res-time" name="time" min="08:00" max="18:30" required>
+              <span class="form-error" id="err-time"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="res-persons">Personenanzahl <span aria-hidden="true">*</span></label>
+            <select id="res-persons" name="persons" required>
+              <option value="">Bitte wählen</option>
+              <option value="1">1 Person</option>
+              <option value="2">2 Personen</option>
+              <option value="3">3 Personen</option>
+              <option value="4">4 Personen</option>
+              <option value="5">5 Personen</option>
+              <option value="6">6 Personen</option>
+              <option value="mehr">Mehr als 6 — bitte anrufen</option>
+            </select>
+            <span class="form-error" id="err-persons"></span>
+          </div>
+          <div class="form-group">
+            <label for="res-note">Anmerkungen (optional)</label>
+            <textarea id="res-note" name="note" rows="3" placeholder="Besondere Wünsche, Allergien, Anlass …"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Anfrage absenden</button>
+          <div class="form-success" id="formSuccess" hidden>
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <strong>Anfrage gesendet!</strong>
+              <p>Wir melden uns in Kürze bei Ihnen. Bis bald im Bella Vita!</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section class="section faq-section" id="faq">
     <div class="section-head animate">
       <p class="eyebrow">FAQ</p>
@@ -308,7 +640,7 @@
     <div class="faq-list animate">
       <details class="faq-item">
         <summary>Kann ich einen Tisch reservieren?</summary>
-        <p>Für kleinere Gruppen reicht meist spontanes Vorbeikommen. Bei größeren Runden ruf uns gerne vorher kurz an.</p>
+        <p>Für kleinere Gruppen reicht meist spontanes Vorbeikommen. Für größere Runden nutzt gerne unser Reservierungsformular weiter oben oder ruft uns kurz an.</p>
       </details>
       <details class="faq-item">
         <summary>Bietet ihr Lieferung an?</summary>
@@ -332,28 +664,12 @@
       </details>
       <details class="faq-item">
         <summary>Habt ihr auch kalte Kaffeegetränke?</summary>
-        <p>Ja, unsere kalten Spezialitäten wie Iced Latte findest du in der Speisekarte unter „Kalte Getränke“.</p>
+        <p>Ja, unsere kalten Spezialitäten wie Iced Latte findest du in der Speisekarte unter der Kategorie Kaffee.</p>
       </details>
     </div>
   </section>
 
-  <section class="section reviews">
-    <div class="section-head center animate">
-      <p class="eyebrow">Bewertungen</p>
-      <h2>5,0 ★ bei Google</h2>
-    </div>
-    <div class="review-grid animate">
-      <blockquote class="review-card">
-        <p>„Sehr leckere italienische Spezialitäten und eine tolle Auswahl an frischen Cannoli, Cornetti und Kaffee. Cafe Bella Vita ist eine klare Empfehlung in Düsseldorf – freundlicher Service, authentischer Geschmack und eine gemütliche Atmosphäre.“</p>
-        <cite>— Noah Sabatino, Google-Rezension</cite>
-      </blockquote>
-      <blockquote class="review-card">
-        <p>„Alles Mega lecker und Personal sehr freundlich.“</p>
-        <cite>— Nicole Ventura, Google-Rezension</cite>
-      </blockquote>
-    </div>
-  </section>
-
+  <!-- KONTAKT / CTA -->
   <section class="section cta-band" id="kontakt">
     <div class="cta-inner animate">
       <div>
@@ -396,9 +712,10 @@
     <div class="footer-col">
       <p class="footer-heading">Navigation</p>
       <p><a href="#speisekarte">Speisekarte</a></p>
+      <p><a href="#kaffeereise">Kaffeereise</a></p>
       <p><a href="#ueber-uns">Über uns</a></p>
       <p><a href="#galerie">Galerie</a></p>
-      <p><a href="#faq">FAQ</a></p>
+      <p><a href="#reservierung">Reservierung</a></p>
     </div>
     <div class="footer-col">
       <p class="footer-heading">Kontakt</p>
@@ -413,5 +730,253 @@
 </footer>
 
 <script src="script.js"></script>
+
+<script>
+/* =====================================================
+   ALLE NEUEN INTERAKTIONEN — inline, script.js bleibt unberührt
+   ===================================================== */
+
+/* --- HERO SLIDER --- */
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  let current = 0;
+  let timer;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function autoplay() {
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  document.getElementById('sliderPrev').addEventListener('click', () => { clearInterval(timer); goTo(current - 1); autoplay(); });
+  document.getElementById('sliderNext').addEventListener('click', () => { clearInterval(timer); goTo(current + 1); autoplay(); });
+  dots.forEach(dot => dot.addEventListener('click', () => { clearInterval(timer); goTo(+dot.dataset.index); autoplay(); }));
+
+  autoplay();
+})();
+
+/* --- ÖFFNUNGSZEITEN-WIDGET --- */
+(function() {
+  const dot = document.getElementById('statusDot');
+  const text = document.getElementById('statusText');
+  if (!dot || !text) return;
+
+  const now = new Date();
+  const day = now.getDay(); // 0=So, 6=Sa
+  const h = now.getHours();
+  const m = now.getMinutes();
+  const mins = h * 60 + m;
+  const open = 8 * 60;   // 08:00
+  const close = 19 * 60; // 19:00
+
+  const isWeekday = day >= 1 && day <= 6;
+  const isOpen = isWeekday && mins >= open && mins < close;
+
+  if (isOpen) {
+    dot.classList.add('open');
+    const remaining = close - mins;
+    const rh = Math.floor(remaining / 60);
+    const rm = remaining % 60;
+    text.textContent = rh > 0
+      ? 'Jetzt geöffnet · schließt in ' + rh + 'h ' + rm + 'min'
+      : 'Jetzt geöffnet · schließt in ' + rm + ' Minuten';
+  } else {
+    dot.classList.add('closed');
+    text.textContent = day === 0 ? 'Sonntag — siehe Aushang' : 'Derzeit geschlossen · öffnet Mo–Sa 08:00';
+  }
+})();
+
+/* --- MENU TABS --- */
+(function() {
+  const tabs = document.querySelectorAll('.menu-tab');
+  const panels = document.querySelectorAll('.menu-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      panels.forEach(p => { p.classList.remove('active'); p.hidden = true; });
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById('tab-' + tab.dataset.tab);
+      if (panel) { panel.classList.add('active'); panel.hidden = false; }
+
+      // Re-apply filter
+      const activeFilter = document.querySelector('.filter-btn.active');
+      if (activeFilter) applyFilter(activeFilter.dataset.filter);
+    });
+  });
+})();
+
+/* --- MENU FILTER --- */
+function applyFilter(filter) {
+  const visiblePanel = document.querySelector('.menu-panel.active');
+  if (!visiblePanel) return;
+  const cards = visiblePanel.querySelectorAll('.menu-card');
+  cards.forEach(card => {
+    if (filter === 'alle') {
+      card.style.display = '';
+    } else {
+      const tags = card.dataset.tags || '';
+      card.style.display = tags.includes(filter) ? '' : 'none';
+    }
+  });
+}
+
+(function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilter(btn.dataset.filter);
+    });
+  });
+})();
+
+/* --- ORIGIN TABS (Kaffeereise) --- */
+(function() {
+  const tabs = document.querySelectorAll('.origin-tab');
+  const panels = document.querySelectorAll('.origin-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      panels.forEach(p => { p.classList.remove('active'); p.hidden = true; });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById('origin-' + tab.dataset.origin);
+      if (panel) { panel.classList.add('active'); panel.hidden = false; }
+    });
+  });
+})();
+
+/* --- LIGHTBOX --- */
+(function() {
+  const items = document.querySelectorAll('.gallery-item[data-lightbox]');
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const lbClose = document.getElementById('lightboxClose');
+  const lbPrev = document.getElementById('lightboxPrev');
+  const lbNext = document.getElementById('lightboxNext');
+  if (!lb || !items.length) return;
+
+  const images = Array.from(items).map(item => {
+    const img = item.querySelector('img');
+    return { src: img ? img.src : '', alt: img ? img.alt : '' };
+  });
+  let current = 0;
+
+  function openLB(index) {
+    current = index;
+    lbImg.src = images[current].src;
+    lbImg.alt = images[current].alt;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+
+  function closeLB() {
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  function prevImg() { current = (current - 1 + images.length) % images.length; lbImg.src = images[current].src; lbImg.alt = images[current].alt; }
+  function nextImg() { current = (current + 1) % images.length; lbImg.src = images[current].src; lbImg.alt = images[current].alt; }
+
+  items.forEach((item, i) => {
+    item.addEventListener('click', () => openLB(i));
+    item.setAttribute('tabindex', '0');
+    item.setAttribute('role', 'button');
+    item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLB(i); } });
+  });
+
+  lbClose.addEventListener('click', closeLB);
+  lbPrev.addEventListener('click', prevImg);
+  lbNext.addEventListener('click', nextImg);
+
+  lb.addEventListener('click', e => { if (e.target === lb) closeLB(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLB();
+    if (e.key === 'ArrowLeft') prevImg();
+    if (e.key === 'ArrowRight') nextImg();
+  });
+})();
+
+/* --- RESERVIERUNGSFORMULAR --- */
+(function() {
+  const form = document.getElementById('reservationForm');
+  const success = document.getElementById('formSuccess');
+  if (!form) return;
+
+  // Set min date to today
+  const dateInput = document.getElementById('res-date');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+  }
+
+  function showError(id, msg) {
+    const el = document.getElementById(id);
+    if (el) { el.textContent = msg; el.style.display = msg ? 'block' : 'none'; }
+    const input = document.getElementById(id.replace('err-', 'res-'));
+    if (input) input.classList.toggle('input-error', !!msg);
+  }
+
+  function validate() {
+    let ok = true;
+    const name = document.getElementById('res-name').value.trim();
+    const email = document.getElementById('res-email').value.trim();
+    const date = document.getElementById('res-date').value;
+    const time = document.getElementById('res-time').value;
+    const persons = document.getElementById('res-persons').value;
+
+    if (!name) { showError('err-name', 'Bitte geben Sie Ihren Namen ein.'); ok = false; } else showError('err-name', '');
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('err-email', 'Bitte geben Sie eine gültige E-Mail-Adresse ein.'); ok = false; } else showError('err-email', '');
+    if (!date) { showError('err-date', 'Bitte wählen Sie ein Datum.'); ok = false; } else { const chosen = new Date(date); const today = new Date(); today.setHours(0,0,0,0); if (chosen < today) { showError('err-date', 'Das Datum muss in der Zukunft liegen.'); ok = false; } else showError('err-date', ''); }
+    if (!time) { showError('err-time', 'Bitte wählen Sie eine Uhrzeit (08:00–18:30).'); ok = false; } else showError('err-time', '');
+    if (!persons) { showError('err-persons', 'Bitte wählen Sie die Personenanzahl.'); ok = false; } else showError('err-persons', '');
+
+    return ok;
+  }
+
+  // Live-Validierung
+  ['res-name','res-email','res-date','res-time','res-persons'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('blur', validate);
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!validate()) return;
+    // Formular ausblenden, Bestätigungsbanner zeigen
+    Array.from(form.elements).forEach(el => el.disabled = true);
+    form.querySelector('.btn-block').style.display = 'none';
+    success.hidden = false;
+    success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+})();
+
+/* --- SCROLL-TO-TOP --- */
+(function() {
+  const btn = document.getElementById('scrollTop');
+  if (!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+</script>
+
 </body>
 </html>
