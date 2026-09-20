@@ -116,6 +116,16 @@ img { max-width: 100%; display: block; }
   margin-top: -1px;
 }
 
+/* Scalloped divider — row of semi-circles, café-awning motif */
+.scallop-divider {
+  height: 30px;
+  width: 100%;
+  background-image: radial-gradient(circle at 15px 0, var(--color-accent) 15px, transparent 15.5px);
+  background-size: 30px 30px;
+  background-repeat: repeat-x;
+  background-position: center top;
+}
+
 .img-fallback { background: linear-gradient(150deg, #f3e3d1 0%, #e7c9a8 100%); }
 .img-fallback img { opacity: 0; }
 .img-fallback::after {
@@ -142,6 +152,43 @@ img { max-width: 100%; display: block; }
 .menu-item-head span:first-child { font-family: var(--font-head); font-weight: 700; font-size: 17px; }
 .menu-price { color: var(--color-accent-dark); font-weight: 700; white-space: nowrap; }
 .menu-item p { font-size: 14px; color: var(--color-muted); }
+
+/* Ribbon corner badge on a featured menu item */
+.menu-item.menu-item-featured {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding-top: 52px;
+}
+.ribbon-badge {
+  position: absolute;
+  top: 26px;
+  right: -33px;
+  width: 122px;
+  transform: rotate(45deg);
+  transform-origin: center;
+  background: var(--color-accent-dark);
+  color: #fff;
+  text-align: center;
+  padding: 4px 0;
+  font-size: 8.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  z-index: 2;
+  box-shadow: 0 3px 10px -2px rgba(46,36,32,0.4);
+}
+.ribbon-badge::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  background: #000;
+  opacity: 0.16;
+  clip-path: polygon(100% 0, 0% 50%, 100% 100%);
+}
 
 /* Popular items chip row */
 .chips-section { background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
@@ -176,6 +223,23 @@ img { max-width: 100%; display: block; }
 .faq-item summary::after { content: '+'; position: absolute; right: 0; top: 14px; font-size: 22px; color: var(--color-accent); transition: transform 0.2s ease; }
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item p { color: var(--color-muted); font-size: 15px; padding-bottom: 18px; }
+
+/* Sourcing content block — diamond mark + centered copy */
+.sourcing-section { padding-top: 0; }
+.sourcing-inner { max-width: 620px; margin: 0 auto; text-align: center; }
+.sourcing-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px;
+  background: var(--color-accent);
+  color: #fff;
+  transform: rotate(45deg);
+  margin-bottom: 26px;
+}
+.sourcing-mark svg { width: 22px; height: 22px; transform: rotate(-45deg); }
+.sourcing-inner .eyebrow { justify-content: center; }
+.sourcing-inner h2 { margin-bottom: 18px; }
+.sourcing-inner p { color: var(--color-muted); margin-bottom: 14px; }
+.sourcing-inner p:last-child { margin-bottom: 0; }
 
 /* Split */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
@@ -254,6 +318,10 @@ img { max-width: 100%; display: block; }
   .chip-row { justify-content: center; }
   .chip { flex: 0 1 30%; min-width: 90px; }
   .chip-photo { width: 88px; height: 88px; }
+  .scallop-divider { height: 20px; background-size: 20px 20px; background-image: radial-gradient(circle at 10px 0, var(--color-accent) 10px, transparent 10.5px); }
+  .ribbon-badge { top: 20px; right: -28px; width: 104px; font-size: 7.5px; padding: 3px 0; }
+  .menu-item.menu-item-featured { padding-top: 46px; }
+  .sourcing-mark { width: 46px; height: 46px; }
 }
 
 @media (max-width: 480px) {
