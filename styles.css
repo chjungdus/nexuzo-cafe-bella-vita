@@ -17,6 +17,8 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+/* Kein seitliches Scrollen/Wackeln auf dem Handy */
+html, body { overflow-x: hidden; overflow-x: clip; }
 
 body {
   font-family: var(--font-body);
@@ -695,6 +697,7 @@ img { max-width: 100%; display: block; }
   .reservation-inner { grid-template-columns: 1fr; gap: 40px; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .origin-split { grid-template-columns: 1fr; gap: 28px; }
+  .split-media-overlap { right: 12px; }
   .hero-badge-float { bottom: 70px; right: 16px; }
   .slider-btn { width: 40px; height: 40px; }
   h2 { font-size: 30px; }
@@ -705,6 +708,7 @@ img { max-width: 100%; display: block; }
   .menu-grid-cards { grid-template-columns: 1fr; }
   .menu-tabs { overflow-x: auto; }
   .menu-tab { padding: 10px 18px; font-size: 16px; }
+  .origin-tab { flex: 1 1 0; padding: 12px 6px; font-size: 15px; }
   .form-row { grid-template-columns: 1fr; }
   .reservation-form-wrap { padding: 24px 20px; }
   .team-grid { grid-template-columns: 1fr; }
